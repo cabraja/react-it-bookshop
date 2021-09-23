@@ -9,6 +9,7 @@ const App = () => {
     const URL_NEW = 'https://api.itbook.store/1.0/new'
     const URL_SEARCH = 'https://api.itbook.store/1.0/search/'
     const [searchValue, setSearchValue] = useState('')
+    const [showWelcome, setShowWelcome] = useState(true)
     const [books, setBooks] = useState([])
 
   useEffect(() => {
@@ -26,7 +27,9 @@ const App = () => {
     return (
         <>
 
-        <WelcomeScreen />
+        {
+            showWelcome && < WelcomeScreen searchValue={searchValue} setSearchValue={setSearchValue} showWelcome={showWelcome} setShowWelcome={setShowWelcome}/>
+        }
 
         <Header searchValue={searchValue} setSearchValue={setSearchValue} handleSubmit={handleSubmit}/>
         <main>
