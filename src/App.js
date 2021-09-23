@@ -18,20 +18,26 @@ const App = () => {
         .then(data => setBooks(data.books))
     },[])
 
-    const handleSubmit = () => {
-        fetch(`${URL_SEARCH}${searchValue}`)
-        .then(res => res.json())
-        .then(data => setBooks(data.books))
-    }
+    useEffect(() => {
+        if(searchValue){
+            fetch(`${URL_SEARCH}${searchValue}`)
+            .then(res => res.json())
+            .then(data => setBooks(data.books))
+        }
+    }, [searchValue])
 
     return (
         <>
 
         {
-            showWelcome && < WelcomeScreen searchValue={searchValue} setSearchValue={setSearchValue} showWelcome={showWelcome} setShowWelcome={setShowWelcome}/>
+            showWelcome && < WelcomeScreen 
+                searchValue={searchValue} 
+                setSearchValue={setSearchValue} 
+                showWelcome={showWelcome} 
+                setShowWelcome={setShowWelcome} />
         }
 
-        <Header searchValue={searchValue} setSearchValue={setSearchValue} handleSubmit={handleSubmit}/>
+        <Header searchValue={searchValue} setSearchValue={setSearchValue}/>
         <main>
         {
             books.map(book => <Book key={book.isbn13} {...book}/>)

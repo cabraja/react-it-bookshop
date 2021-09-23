@@ -1,7 +1,7 @@
 import React from 'react'
 import './assets/css/welcome.css'
 
-const WelcomeScreen = ({searchValue,setSearchValue,showWelcome,setShowWelcome}) => {
+const WelcomeScreen = ({searchValue,setSearchValue,showWelcome,setShowWelcome,handleSubmit}) => {
 
     const categories = ['Web','Games','Data','Python','Javascript','C++','Java','Ruby','Go','SQL','PHP','React','Angular','Vue.js']
 
@@ -12,16 +12,20 @@ const WelcomeScreen = ({searchValue,setSearchValue,showWelcome,setShowWelcome}) 
                 <h2>Lets start by picking the category you are interested in...</h2>
                 <div className="categories">
                     {
-                    categories.map(item => {
-                        console.log(item);
+                    categories.map((item,index) => {
                         return(
-                            <button className="cat-button" onClick={() => setSearchValue(item)}>{item}</button>
+                            <button key={index} className="cat-button" onClick={() => {
+                                setSearchValue(item)
+                                setTimeout(() => {
+                                    setShowWelcome(false)
+                                },[1000])
+                            }}>{item}</button>
                         )
                     })
                 }
                 </div>
                 <h2>...or maybe you just want to see what is new!</h2>
-                <button id="new-books-button">New Books</button>
+                <button id="new-books-button" onClick={() => setShowWelcome(false)}>New Books</button>
             </div>
         </div>
     )
