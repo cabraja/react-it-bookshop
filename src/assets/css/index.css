@@ -65,3 +65,24 @@ section a:hover {
   background-color: #709bff;
   transition: 0.3s;
 }
+
+/* 
+=====================
+Footer
+=====================
+ */
+footer {
+  background-color: rgb(37, 37, 37);
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+footer h3 {
+  font-weight: 400;
+}
+footer h4 {
+  font-weight: 300;
+  color: rgb(194, 194, 194);
+}

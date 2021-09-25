@@ -43,6 +43,11 @@ const App = () => {
             books.map(book => <Book key={book.isbn13} {...book}/>)
         }
         </main>
+
+        <footer>
+            <h3>Books.IT, books for programming nerds</h3>
+            <h4>Made by Mihajlo Cabraja</h4>
+        </footer>
         </>
     )
 }
