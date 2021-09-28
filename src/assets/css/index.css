@@ -20,6 +20,7 @@ body {
 Main
 ==========================
 */
+
 main {
   margin: 4vh auto;
   width: 90%;
@@ -85,4 +86,45 @@ footer h3 {
 footer h4 {
   font-weight: 300;
   color: rgb(194, 194, 194);
+}
+
+/* 
+=======================
+Media Query
+=======================
+ */
+@media only screen and (max-width: 1400px) {
+  main {
+    margin: 4vh auto;
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    row-gap: 30px;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  main {
+    margin: 4vh auto;
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    row-gap: 30px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  main {
+    margin: 4vh auto;
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    row-gap: 30px;
+  }
+  section img {
+    width: 160px;
+  }
 }

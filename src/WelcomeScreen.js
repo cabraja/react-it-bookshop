@@ -18,7 +18,7 @@ const WelcomeScreen = ({searchValue,setSearchValue,showWelcome,setShowWelcome,ha
                                 setSearchValue(item)
                                 setTimeout(() => {
                                     setShowWelcome(false)
-                                },[1000])
+                                },[600])
                             }}>{item}</button>
                         )
                     })
