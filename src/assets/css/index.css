@@ -116,6 +116,16 @@ Media Query
 }
 
 @media only screen and (max-width: 750px) {
+  header img {
+    width: 100px;
+    height: 30px;
+  }
+
+  #search {
+    width: 150px;
+    font-size: 1rem;
+  }
+
   main {
     margin: 4vh auto;
     width: 95%;
@@ -126,5 +136,11 @@ Media Query
   }
   section img {
     width: 160px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  main {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
